@@ -24,6 +24,8 @@ const searchBook = () => {
         // console.log('Please write something to search.')
         const div = document.createElement('div');
 
+        searchResult.textContent = '';
+
         div.innerHTML = `
         <h3 style="text-align: center;">Please write something to search.</h3>
     `
@@ -100,6 +102,9 @@ const foundResult = numFound => {
         console.log('no result')
         const div = document.createElement('div');
 
+        searchResult.textContent = '';
+
+
         div.innerHTML = `
             <h3 style="text-align: center;">No result found.</h3>
         `
@@ -110,8 +115,10 @@ const foundResult = numFound => {
     else {
         console.log('result found');
 
-
+        foundResultNum.textContent = '';
         const div = document.createElement('div');
+
+
 
         div.innerHTML = `
         <h3 style="text-align: center;">${numFound} result found!</h3>
@@ -119,6 +126,9 @@ const foundResult = numFound => {
         foundResultNum.appendChild(div);
 
         foundResultNum.style.display = 'block';
+
+
+        searchResult.textContent = '';
     }
 
 }
